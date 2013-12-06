@@ -42,6 +42,6 @@ class Tastykhana(BaseSpider):
         return result
 
     def start_requests(self):
-        with open('/home/virendra/tastykhana/localities.txt', 'rb') as f:
+        with open('localities.txt', 'rb') as f:
             for line in f:
                 yield Request("http://tastykhana.in/mumbai/" + repr(line)[1:-3], self.parse)
